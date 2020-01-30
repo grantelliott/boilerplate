@@ -4,14 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <!-- capture the CSS content as a Nunjucks variable -->
-    {% set css %}
-      {% include "styles.css" %}
-    {% endset %}
-    <!-- feed it through our cssmin filter to minify -->
-    <style>
-      {{ css | cssmin | safe }}
-    </style>
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/styles.css">
   </head>
   <body>
     {{ content | safe }}
