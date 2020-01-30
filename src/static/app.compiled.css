@@ -11402,8 +11402,16 @@ video {
 }
 
 h1 {
-  color: green !important;
   font-size: 100px;
+}
+
+h2 {
+  color: red;
+}
+
+h3 {
+  text-decoration: underline;
+  font-size: 40px;
 }
 
 @media (min-width: 640px) {

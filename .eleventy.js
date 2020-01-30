@@ -1,16 +1,34 @@
-const CleanCSS = require("clean-css");
+const htmlmin = require("html-minifier");
+
 module.exports = function(eleventyConfig) {
-  eleventyConfig.addFilter("cssmin", function(code) {
-    return new CleanCSS({}).minify(code).styles;
-  });
   eleventyConfig.addPassthroughCopy("src/static");
+
+  if (process.env.ELEVENTY_ENV === 'production') {
+    // Minify HTML (including inlined CSS)
+    eleventyConfig.addTransform("compressHTML", function(content, outputPath) {
+      if (outputPath.endsWith(".html")) {
+        let minified = htmlmin.minify(content, {
+          useShortDoctype: true,
+          removeComments: true,
+          collapseWhitespace: true,
+          minifyCSS: true
+        });
+        return minified;
+      }
+      return content;
+    });
+  }
 
   return {
     dir: {
-      input: "src",
+      input: "src/",
       output: "dist",
       includes: "_includes",
       layouts: "_layouts"
     },
+    templateFormats: ["html", "md", "njk"],
+    htmlTemplateEngine: "njk",
+
+    passthroughFileCopy: true
   };
-}
+};

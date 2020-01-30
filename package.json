@@ -4,20 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"postcss src/_assets/stylesheets/*.css -o src/static/app.compiled.css --watch\" \"eleventy --serve\""
+    "start": "concurrently \"postcss src/_assets/stylesheets/*.css -o src/static/app.compiled.css --watch\" \"eleventy --serve\"",
+    "build": "del dist && eleventy && postcss src/_assets/stylesheets/app.css -o src/static/app.compiled.css && purgecss --config ./purgecss.config.js -o src/_includes/ && ELEVENTY_ENV=production eleventy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0"
-  },
-  "dependencies": {
+    "@11ty/eleventy": "^0.10.0",
     "autoprefixer": "^9.7.4",
-    "clean-css": "^4.2.1",
     "concurrently": "^5.1.0",
-    "postcss": "^7.0.26",
+    "del-cli": "^3.0.0",
+    "html-minifier": "^4.0.0",
     "postcss-cli": "^7.1.0",
+    "purgecss": "^2.0.5",
     "tailwindcss": "^1.1.4"
   }
 }
