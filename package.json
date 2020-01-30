@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"postcss src/_assets/stylesheets/*.css -o src/static/app.compiled.css --watch\" \"eleventy --serve\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"postcss src/_assets/stylesheets/*.css -o src/static/app.compiled.css --watch\" \"eleventy --serve\""
   },
   "keywords": [],
   "author": "",
