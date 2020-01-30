@@ -1,4 +1,4 @@
 module.exports = {
-  content: ["dist/**/*.html", "dist/**/*.js"],
+  content: ["dist/**/*.html"],
   css: ["src/static/app.compiled.css"],
 };
