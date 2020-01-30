@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve",
+    "start": "concurrently \"postcss src/_assets/stylesheets/*.css -o src/static/app.compiled.css --watch\" \"eleventy --serve\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,7 +14,11 @@
     "@11ty/eleventy": "^0.10.0"
   },
   "dependencies": {
+    "autoprefixer": "^9.7.4",
     "clean-css": "^4.2.1",
+    "concurrently": "^5.1.0",
+    "postcss": "^7.0.26",
+    "postcss-cli": "^7.1.0",
     "tailwindcss": "^1.1.4"
   }
 }
