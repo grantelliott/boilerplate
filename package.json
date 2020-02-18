@@ -13,6 +13,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
     "@fullhuman/postcss-purgecss": "^2.0.6",
+    "@tailwindcss/custom-forms": "^0.2.1",
     "autoprefixer": "^9.7.4",
     "concurrently": "^5.1.0",
     "del-cli": "^3.0.0",
