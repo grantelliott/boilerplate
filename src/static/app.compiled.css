@@ -14222,16 +14222,6 @@ video {
   transition-duration: 1000ms;
 }
 
-.hero {
-  background-color: red;
-  display: flex;
-  flex-direction: column;
-}
-
-.content {
-  flex-grow: 1;
-}
-
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;
