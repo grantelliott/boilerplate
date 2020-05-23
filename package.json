@@ -18,6 +18,6 @@
     "del-cli": "^3.0.0",
     "html-minifier": "^4.0.0",
     "postcss-cli": "^7.1.0",
-    "tailwindcss": "^1.1.4"
+    "tailwindcss": "^1.4.6"
   }
 }
